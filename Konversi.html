@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>APLIKASI KONVERSI MATA UANG</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<br><br><br>
+<h1 align="center">Aplikasi Konversi Mata Uang</h1><br>
+
+<table border="1" class="border border-success" align="center" width="700" height="200">
+	<tr>
+	<td align="center"> Mata Uang Asal<br><br>
+		<div class="container">
+		<form id="form1" name="form1" onsubmit="return false">
+
+			<select id="kategori" class="form-control" >
+			  	<option value="angka1">Indonesia-Rupiah</option>
+			  	<option value="angka2">Inggris-Poundsterling</option>
+			  	<option value="angka3">Amerika-Dollar</option>
+			</select>
+
+		</form>
+
+		<br><input id="data1" class="form-control" type="text" placeholder="" name=""><br>
+
+			<input type="button" class="btn btn-success" onclick="hitung()" name="" value="Hitung">
+
+	</td>
+
+	<td align="center"> Mata Uang Tujuan<br><br>
+		<div class="container">
+		<form id="form2" name="form2" onsubmit="return false">
+			<select id="kategori1" class="form-control">
+			  	<option value="angka1">Indonesia-Rupiah</option>
+			  	<option value="angka2">Inggris-Poundsterling</option>
+			  	<option value="angka3">Amerika-Dollar</option>
+			</select>
+		</form>
+		<br>
+		<p id="tampil"></p>
+		
+	</td>
+
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+	function hitung() {
+		
+		var mata_uang = document.getElementById('form1').kategori.value;
+		var tukar_uang = document.getElementById('form2').kategori1.value;
+		var masukan = parseFloat(data1.value);
+
+		if (mata_uang == "angka3" && tukar_uang == "angka1") {
+
+				var hasil = masukan * 13992 ;
+
+				document.getElementById("tampil").innerHTML = hasil;
+
+		} else if (mata_uang == "angka2" && tukar_uang == "angka1") {
+
+			hasil = masukan * 18838;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (mata_uang == "angka2" && tukar_uang == "angka3") {
+
+			hasil = masukan * 0.74;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (mata_uang == "angka1" && tukar_uang == "angka2") {
+			
+			hasil = masukan * 0.000053;
+
+			document.getElementById("tampil").innerHTML = hasil; 
+
+		} else if (mata_uang == "angka1" && tukar_uang == "angka3") {
+
+			hasil = masukan * 0.000071;
+
+			document.getElementById("tampil").innerHTML = hasil;
+			
+		} else if (mata_uang == "angka3" && tukar_uang == "angka2") {
+
+			hasil = masukan * 0.75;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		} 
+
+	}
+
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
